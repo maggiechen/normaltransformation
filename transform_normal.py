@@ -11,7 +11,7 @@ M = np.matrix([[-6, 0, 0], [0, 2, 0], [0, 0, 1]])
 
 point1 = np.array([1, 0, 1])
 point2 = np.array([0, 1, 1])
-
+point3 = np.array([2, 2, 1])
 # ====
 print("Original matrix")
 print(M)
@@ -45,12 +45,13 @@ print(np.divide(adjoint, det))
 # transform these points using M
 new_point1 = M.dot(point1)
 new_point2 = M.dot(point2)
+new_point3 = M.dot(point3)
 
 # plot the old line, new line, old normal, and new normal
-old_x_list = [point1[0], point2[0]]
-old_y_list = [point1[1], point2[1]]
-new_x_list = [new_point1[0, 0], new_point2[0, 0]]
-new_y_list = [new_point1[0, 1], new_point2[0, 1]]
+old_x_list = [point1[0], point2[0], point3[0]]
+old_y_list = [point1[1], point2[1], point3[1]]
+new_x_list = [new_point1[0, 0], new_point2[0, 0], new_point3[0, 0]]
+new_y_list = [new_point1[0, 1], new_point2[0, 1], new_point3[0, 1]]
 slope = (old_x_list[1] - old_x_list[0])/(old_y_list[1] - old_y_list[0])
 normal = np.array([1, -1/slope, 0])
 
